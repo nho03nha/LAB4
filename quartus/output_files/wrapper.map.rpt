@@ -1,0 +1,1761 @@
+Analysis & Synthesis report for wrapper
+Thu Nov 03 23:29:10 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "singlecycle:dut|lsu:ls"
+ 12. Port Connectivity Checks: "singlecycle:dut|ctrl_unit:cu"
+ 13. Port Connectivity Checks: "singlecycle:dut|pc:pc0"
+ 14. Port Connectivity Checks: "singlecycle:dut"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Nov 03 23:29:10 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; wrapper                                         ;
+; Top-level Entity Name              ; wrapper                                         ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 112                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; wrapper            ; wrapper            ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                               ;
++-----------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                            ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                ; Library ;
++-----------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/wrapper.sv         ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/wrapper.sv         ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/singlecycle.sv ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/singlecycle.sv ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/regfile.sv     ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/regfile.sv     ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/pc.sv          ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/pc.sv          ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/lsu.sv         ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/lsu.sv         ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/inst_memory.sv ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/inst_memory.sv ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/immgen.sv      ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/immgen.sv      ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/ctrl_unit.sv   ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/ctrl_unit.sv   ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/brcomp.sv      ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/brcomp.sv      ;         ;
+; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/alu.sv         ; yes             ; User SystemVerilog HDL File  ; //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/src/alu.sv         ;         ;
++-----------------------------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 112   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |wrapper                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 112  ; 0            ; |wrapper            ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++------------------------------------------+---------------------------------------------+
+; Register name                            ; Reason for Removal                          ;
++------------------------------------------+---------------------------------------------+
+; singlecycle:dut|regfile:rf|mem[0][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[31][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[30][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[29][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[28][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[27][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[26][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[25][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[24][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[23][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[22][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[21][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[20][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[19][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[18][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[17][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[16][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[15][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[14][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[13][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[12][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[11][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][31]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][30]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][29]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][28]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][27]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][26]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][25]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][24]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][23]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][22]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][21]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][20]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][19]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][18]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][17]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][16]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][15]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][14]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][13]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][12]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][11]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][10]   ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][9]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][8]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][7]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][6]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][5]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][4]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][3]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][2]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][1]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[10][0]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[9][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[8][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[7][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[6][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[5][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[4][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[3][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[2][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[1][0]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][31]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][30]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][29]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][28]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][27]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][26]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][25]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][24]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][23]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][22]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][21]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][20]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][19]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][18]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][17]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][16]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][15]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][14]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][13]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][12]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][11]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][10]    ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][9]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][8]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][7]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][6]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][5]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][4]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][3]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][2]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|regfile:rf|mem[0][1]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][31]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][30]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][9]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][8]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][7]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1184][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][7]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1168][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][16]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][15]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][14]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][13]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][12]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][11]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][10]     ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][9]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][8]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][7]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1152][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1136][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1136][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1136][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1136][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1136][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1136][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1136][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1120][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1120][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1120][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1120][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1120][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1120][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1120][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1104][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1104][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1104][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1104][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1104][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1104][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1104][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1088][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1088][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1088][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1088][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1088][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1088][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1088][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1072][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1072][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1072][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1072][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1072][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1072][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1072][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1056][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1056][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1056][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1056][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1056][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1056][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1056][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1040][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1040][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1040][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1040][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1040][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1040][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1040][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1024][6]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1024][5]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1024][4]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1024][3]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1024][2]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1024][1]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|lsu:ls|mem[1024][0]      ; Stuck at GND due to stuck port clock_enable ;
+; singlecycle:dut|pc:pc0|pc_o[0]           ; Lost fanout                                 ;
+; singlecycle:dut|pc:pc0|pc_four_o[0..31]  ; Lost fanout                                 ;
+; singlecycle:dut|pc:pc0|pc_o[1..31]       ; Lost fanout                                 ;
+; Total Number of Removed Registers = 1181 ;                                             ;
++------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                             ;
++----------------------------------------+--------------------------------+-------------------------------------------------------------------------------+
+; Register name                          ; Reason for Removal             ; Registers Removed due to This Register                                        ;
++----------------------------------------+--------------------------------+-------------------------------------------------------------------------------+
+; singlecycle:dut|regfile:rf|mem[31][31] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][31], singlecycle:dut|regfile:rf|mem[0][30], ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|regfile:rf|mem[0][29], singlecycle:dut|pc:pc0|pc_four_o[31],  ;
+;                                        ;                                ; singlecycle:dut|pc:pc0|pc_four_o[30], singlecycle:dut|pc:pc0|pc_four_o[0]     ;
+; singlecycle:dut|regfile:rf|mem[0][0]   ; Stuck at GND                   ; singlecycle:dut|pc:pc0|pc_o[0], singlecycle:dut|pc:pc0|pc_o[31],              ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[30], singlecycle:dut|pc:pc0|pc_o[29],             ;
+;                                        ;                                ; singlecycle:dut|pc:pc0|pc_o[28]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][26] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][26], singlecycle:dut|pc:pc0|pc_four_o[26],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[26]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][25] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][25], singlecycle:dut|pc:pc0|pc_four_o[25],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[25]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][24] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][24], singlecycle:dut|pc:pc0|pc_four_o[24],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[24]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][23] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][23], singlecycle:dut|pc:pc0|pc_four_o[23],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[23]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][22] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][22], singlecycle:dut|pc:pc0|pc_four_o[22],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[22]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][21] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][21], singlecycle:dut|pc:pc0|pc_four_o[21],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[21]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][20] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][20], singlecycle:dut|pc:pc0|pc_four_o[20],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[20]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][19] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][19], singlecycle:dut|pc:pc0|pc_four_o[19],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[19]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][18] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][18], singlecycle:dut|pc:pc0|pc_four_o[18],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[18]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][17] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][17], singlecycle:dut|pc:pc0|pc_four_o[17],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[17]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][16] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][16], singlecycle:dut|pc:pc0|pc_four_o[16],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[16]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][15] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][15], singlecycle:dut|pc:pc0|pc_four_o[15],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[15]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][14] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][14], singlecycle:dut|pc:pc0|pc_four_o[14],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[14]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][13] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][13], singlecycle:dut|pc:pc0|pc_four_o[13],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[13]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][12] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][12], singlecycle:dut|pc:pc0|pc_four_o[12],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[12]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][11] ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][11], singlecycle:dut|pc:pc0|pc_four_o[11],  ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[11]                                               ;
+; singlecycle:dut|regfile:rf|mem[31][8]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][8], singlecycle:dut|pc:pc0|pc_four_o[8],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[8]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][7]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][7], singlecycle:dut|pc:pc0|pc_four_o[7],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[7]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][6]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][6], singlecycle:dut|pc:pc0|pc_four_o[6],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[6]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][5]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][5], singlecycle:dut|pc:pc0|pc_four_o[5],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[5]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][4]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][4], singlecycle:dut|pc:pc0|pc_four_o[4],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[4]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][3]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][3], singlecycle:dut|pc:pc0|pc_four_o[3],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[3]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][2]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][2], singlecycle:dut|pc:pc0|pc_four_o[2],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[2]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][1]  ; Stuck at GND                   ; singlecycle:dut|regfile:rf|mem[0][1], singlecycle:dut|pc:pc0|pc_four_o[1],    ;
+;                                        ; due to stuck port clock_enable ; singlecycle:dut|pc:pc0|pc_o[1]                                                ;
+; singlecycle:dut|regfile:rf|mem[31][27] ; Stuck at GND                   ; singlecycle:dut|pc:pc0|pc_o[27]                                               ;
+;                                        ; due to stuck port clock_enable ;                                                                               ;
+; singlecycle:dut|regfile:rf|mem[31][10] ; Stuck at GND                   ; singlecycle:dut|pc:pc0|pc_o[10]                                               ;
+;                                        ; due to stuck port clock_enable ;                                                                               ;
+; singlecycle:dut|regfile:rf|mem[31][9]  ; Stuck at GND                   ; singlecycle:dut|pc:pc0|pc_o[9]                                                ;
+;                                        ; due to stuck port clock_enable ;                                                                               ;
++----------------------------------------+--------------------------------+-------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "singlecycle:dut|lsu:ls"                                                                ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; rdata_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "singlecycle:dut|ctrl_unit:cu"                                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; wb_sel_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "singlecycle:dut|pc:pc0"                                                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; pc_four_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "singlecycle:dut"                                                                                 ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; io_sw_i[31..17]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; io_lcd_o[29..10]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_ledg_o[31..8]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_ledr_o[31..17] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex0_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex1_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex2_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex3_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex4_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex5_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex6_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; io_hex7_o[31..7]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 03 23:28:52 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off wrapper -c wrapper
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/wrapper.sv
+    Info (12023): Found entity 1: wrapper
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/singlecycle.sv
+    Info (12023): Found entity 1: singlecycle
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/regfile.sv
+    Info (12023): Found entity 1: regfile
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/pc.sv
+    Info (12023): Found entity 1: pc
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/lsu.sv
+    Info (12023): Found entity 1: lsu
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/inst_memory.sv
+    Info (12023): Found entity 1: inst_memory
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/immgen.sv
+    Info (12023): Found entity 1: immgen
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/ctrl_unit.sv
+    Info (12023): Found entity 1: ctrl_unit
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/brcomp.sv
+    Info (12023): Found entity 1: brcomp
+Info (12021): Found 1 design units, including 1 entities, in source file //wsl.localhost/ubuntu-20.04/home/laughing/projects/lab4/src/alu.sv
+    Info (12023): Found entity 1: alu
+Info (12127): Elaborating entity "wrapper" for the top level hierarchy
+Info (12128): Elaborating entity "singlecycle" for hierarchy "singlecycle:dut"
+Warning (10036): Verilog HDL or VHDL warning at singlecycle.sv(166): object "wb_data" assigned a value but never read
+Info (10041): Inferred latch for "wdata[0]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[1]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[2]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[3]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[4]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[5]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[6]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[7]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[8]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[9]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[10]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[11]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[12]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[13]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[14]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[15]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[16]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[17]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[18]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[19]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[20]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[21]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[22]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[23]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[24]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[25]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[26]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[27]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[28]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[29]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[30]" at singlecycle.sv(117)
+Info (10041): Inferred latch for "wdata[31]" at singlecycle.sv(117)
+Info (12128): Elaborating entity "pc" for hierarchy "singlecycle:dut|pc:pc0"
+Info (12128): Elaborating entity "inst_memory" for hierarchy "singlecycle:dut|inst_memory:im"
+Warning (10034): Output port "inst_o" at inst_memory.sv(6) has no driver
+Warning (12158): Entity "inst_memory" contains only dangling pins
+Info (12128): Elaborating entity "regfile" for hierarchy "singlecycle:dut|regfile:rf"
+Warning (10175): Verilog HDL warning at regfile.sv(30): ignoring unsupported system task
+Info (12128): Elaborating entity "ctrl_unit" for hierarchy "singlecycle:dut|ctrl_unit:cu"
+Info (10041): Inferred latch for "alu_op_o[0]" at ctrl_unit.sv(161)
+Info (10041): Inferred latch for "alu_op_o[1]" at ctrl_unit.sv(161)
+Info (10041): Inferred latch for "alu_op_o[2]" at ctrl_unit.sv(161)
+Info (10041): Inferred latch for "alu_op_o[3]" at ctrl_unit.sv(161)
+Info (10041): Inferred latch for "br_unsigned_o" at ctrl_unit.sv(47)
+Info (10041): Inferred latch for "br_sel_o" at ctrl_unit.sv(47)
+Info (10041): Inferred latch for "wb_sel_o[0]" at ctrl_unit.sv(47)
+Info (10041): Inferred latch for "wb_sel_o[1]" at ctrl_unit.sv(47)
+Info (10041): Inferred latch for "mem_wren_o" at ctrl_unit.sv(47)
+Info (10041): Inferred latch for "op_b_sel_o" at ctrl_unit.sv(47)
+Info (10041): Inferred latch for "op_a_sel_o" at ctrl_unit.sv(47)
+Info (10041): Inferred latch for "rd_wren_o" at ctrl_unit.sv(47)
+Info (12128): Elaborating entity "immgen" for hierarchy "singlecycle:dut|immgen:imgen"
+Info (12128): Elaborating entity "brcomp" for hierarchy "singlecycle:dut|brcomp:br"
+Warning (10230): Verilog HDL assignment warning at brcomp.sv(10): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "alu" for hierarchy "singlecycle:dut|alu:al"
+Info (10041): Inferred latch for "alu_data_o[0]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[1]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[2]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[3]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[4]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[5]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[6]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[7]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[8]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[9]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[10]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[11]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[12]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[13]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[14]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[15]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[16]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[17]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[18]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[19]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[20]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[21]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[22]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[23]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[24]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[25]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[26]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[27]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[28]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[29]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[30]" at alu.sv(31)
+Info (10041): Inferred latch for "alu_data_o[31]" at alu.sv(31)
+Info (12128): Elaborating entity "lsu" for hierarchy "singlecycle:dut|lsu:ls"
+Warning (10175): Verilog HDL warning at lsu.sv(73): ignoring unsupported system task
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[16]_584" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[16]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[15]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[14]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[13]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[12]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[11]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[10]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[9]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[8]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[7]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[6]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[5]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[4]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[3]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[2]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[1]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[0]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[30]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|wdata[31]" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|ctrl_unit:cu|rd_wren_o" is permanently disabled
+Warning (14025): LATCH primitive "singlecycle:dut|ctrl_unit:cu|br_sel_o" is permanently disabled
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_ON" is stuck at GND
+    Warning (13410): Pin "LCD_EN" is stuck at GND
+    Warning (13410): Pin "LCD_RS" is stuck at GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[0]" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[1]" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[2]" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[3]" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[4]" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[5]" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[6]" is stuck at GND
+    Warning (13410): Pin "LCD_DATA[7]" is stuck at GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+    Warning (13410): Pin "HEX7[0]" is stuck at GND
+    Warning (13410): Pin "HEX7[1]" is stuck at GND
+    Warning (13410): Pin "HEX7[2]" is stuck at GND
+    Warning (13410): Pin "HEX7[3]" is stuck at GND
+    Warning (13410): Pin "HEX7[4]" is stuck at GND
+    Warning (13410): Pin "HEX7[5]" is stuck at GND
+    Warning (13410): Pin "HEX7[6]" is stuck at GND
+    Warning (13410): Pin "HEX6[0]" is stuck at GND
+    Warning (13410): Pin "HEX6[1]" is stuck at GND
+    Warning (13410): Pin "HEX6[2]" is stuck at GND
+    Warning (13410): Pin "HEX6[3]" is stuck at GND
+    Warning (13410): Pin "HEX6[4]" is stuck at GND
+    Warning (13410): Pin "HEX6[5]" is stuck at GND
+    Warning (13410): Pin "HEX6[6]" is stuck at GND
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[4]" is stuck at GND
+    Warning (13410): Pin "HEX5[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at GND
+    Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX4[3]" is stuck at GND
+    Warning (13410): Pin "HEX4[4]" is stuck at GND
+    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX4[6]" is stuck at GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at GND
+    Warning (13410): Pin "HEX1[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[3]" is stuck at GND
+    Warning (13410): Pin "HEX1[4]" is stuck at GND
+    Warning (13410): Pin "HEX1[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND
+    Warning (13410): Pin "HEX0[1]" is stuck at GND
+    Warning (13410): Pin "HEX0[2]" is stuck at GND
+    Warning (13410): Pin "HEX0[3]" is stuck at GND
+    Warning (13410): Pin "HEX0[4]" is stuck at GND
+    Warning (13410): Pin "HEX0[5]" is stuck at GND
+    Warning (13410): Pin "HEX0[6]" is stuck at GND
+Info (17049): 64 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/quartus/output_files/wrapper.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 19 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_27"
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[17]"
+Info (21057): Implemented 112 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 93 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 143 warnings
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Thu Nov 03 23:29:10 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:04
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in //wsl.localhost/Ubuntu-20.04/home/laughing/projects/LAB4/quartus/output_files/wrapper.map.smsg.
+
+
